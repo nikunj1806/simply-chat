@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+    <%- include('partials/header') %>
+    <body class="bg-light">
+        <%- include('partials/navbar') %>
+        <div class="container">
+            <% if (locals.user) { %>
+                <div class="alert alert-success text-center mt-3">
+                    Welcome back, <%= locals.user.first_name %>!
+                </div>
+                <!-- Chat messages area -->
+                <div class="chat-messages">
+                  <!-- Sample messages -->
+                 
+                </div>
+
+                <!-- Chat input form -->
+                <form class="p-3 border-top bg-white">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Type a message...">
+                    <button class="btn btn-primary" type="submit">Send</button>
+                  </div>
+                </form>
+            <% } else{ %>
+            <div class="d-flex justify-content-center align-items-center vh-100">
+                <form class="p-4 bg-white rounded shadow" style="min-width: 300px;" method="post" action="/login">
+                  <h4 class="mb-3 text-center">Login</h4>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100">Login</button>
+                </form>
+              </div>
+              <% } %>
+        </div>
+        <%- include('partials/footer') %>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+import express from 'express';
+import AuthCtrl from '../controller/auth.controller.js';
+import UserCtrl from '../controller/user.controller.js';
+const router = express.Router();
+const authCtrl = new AuthCtrl();
+const userCtrl = new UserCtrl();
+router.post('/login', authCtrl.login);
+router.post('/register', userCtrl.createUser);
+router.get('/logout', authCtrl.logout);
+export default router;
