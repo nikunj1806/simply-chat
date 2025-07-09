@@ -4,7 +4,8 @@
   "description": "Simple chat application",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "author": "Nick Savaliya",
   "license": "ISC",
